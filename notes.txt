@@ -1,0 +1,25 @@
+Trail Buddy
+
+APIs
+    Maps api to show a location
+    Trails api to get a list of nearby Trails
+    Weather api to the weather from the location potentially
+
+USER Stories
+
+    As a person who loves the outdoors
+    I want to find a trail to hike with the right weather
+    So that I can pick the right trail for what I am feeling that day
+
+
+
+Side Notes
+    Add weather to the initial search to limit the possible results
+        Fog, rain, snow, sun, cloudy, high winds, high/low temps
+
+
+MVP
+    Start with preset of conditions to narrow down what we are doing
+    All trails within 100 miles and less than 7 miles total
+
+    Only has weather, trail details, and distance away from user
