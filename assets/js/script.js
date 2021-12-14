@@ -76,17 +76,27 @@ function getTrailsData() {
             response.json().then(function (data) {
                 trailsData = data;
                 console.log(data);
+                setImage();
             });
         });
 };
 
-function showTitle() {
-    for (var i = 0; i < trailsData.length; i++) {
-        var trails = trailsData.data.title;
-        trailEl
-        console.log(trailsData);
-    };
-};
+// function showTitle() {
+//     for (var i = 0; i < trailsData.length; i++) {
+//         var trails = trailsData.data.title;
+//         trailEl
+//         console.log(trailsData);
+//     };
+// };
 
 getTrailsData();
-showTitle();
+// showTitle();
+
+
+// Ajane's adding image
+// This is how we access the URL of the image we want
+// trailsData.data[0].images[0].url
+var koolAidMan = document.getElementById("koolAidMan");
+function setImage() {
+    koolAidMan.src = trailsData.data[0].images[0].url;
+}
