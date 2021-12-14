@@ -68,7 +68,7 @@ var trailsData;
 function getTrailsData() {
 
 
-    var apiUrl = "https://developer.nps.gov/api/v1/places?statecode=WA&limit=50&api_key=WdgBOclP1YDr6ZIL0vXfInjZRVwmb8VjKrcvwpoZ"
+    var apiUrl = "https://developer.nps.gov/api/v1/places?statecode=WA&limit=50&q=trails&api_key=WdgBOclP1YDr6ZIL0vXfInjZRVwmb8VjKrcvwpoZ"
 
     fetch(apiUrl)
         .then(function(response) {
