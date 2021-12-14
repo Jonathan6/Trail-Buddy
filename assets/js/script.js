@@ -43,7 +43,7 @@ function renderWeather() {
         weatherDesEl[i].textContent = current.weather[0].description; 
 
     }
-}
+};
 
 function saveDataLocal() {
     localStorage.setItem("TESTING", JSON.stringify(weatherData));
@@ -59,3 +59,34 @@ function unixConversion(unix) {
     temp = temp.substring(0, temp.length - 4);
     return temp;
 }
+
+// Start of trails function
+
+var trailEl = document.querySelector('.menu-list');
+var trailsData;
+
+function getTrailsData() {
+
+
+    var apiUrl = "https://developer.nps.gov/api/v1/places?statecode=WA&limit=50&api_key=WdgBOclP1YDr6ZIL0vXfInjZRVwmb8VjKrcvwpoZ"
+
+    fetch(apiUrl)
+        .then(function(response) {
+            if(response.ok)
+            response.json().then(function (data) {
+                trailsData = data;
+                console.log(data);
+            });
+        });
+};
+
+function showTitle() {
+    for (var i = 0; i < trailsData.length; i++) {
+        var trails = trailsData.data.title;
+        trailEl
+        console.log(trailsData);
+    };
+};
+
+getTrailsData();
+showTitle();
