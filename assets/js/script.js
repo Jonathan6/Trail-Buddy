@@ -90,5 +90,3 @@ function showTitle() {
 
 getTrailsData();
 showTitle();
-    
-console.log(trailEl);
