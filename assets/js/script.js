@@ -14,7 +14,7 @@ function getWeatherData(input) {
     // TODO: get actual OPEN WEATHER API url and key
     var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=47.466605&lon=-121.655338&exclude=current,minutely,hourly&appid=31ed1d78ece05a26dbb0c6020e7b32b5&units=imperial";
     fetch(apiUrl)
-        .then(function(response) {
+        .then(function (response) {
             if (response.ok) {
                 response.json().then(function (data) {
                     weatherData = data;
@@ -40,7 +40,7 @@ function renderWeather() {
         minEl[i].textContent = "Low: " + current.temp.min + "\u00B0F";
         windEl[i].textContent = current.wind_speed + " MPH";
         weatherMainEl[i].textContent = current.weather[0].main;
-        weatherDesEl[i].textContent = current.weather[0].description; 
+        weatherDesEl[i].textContent = current.weather[0].description;
 
     }
 };
@@ -54,32 +54,62 @@ function loadDataLocal() {
 }
 
 function unixConversion(unix) {
-    var date = new Date(unix*1000);
+    var date = new Date(unix * 1000);
     var temp = date.toDateString();
     temp = temp.substring(0, temp.length - 4);
     return temp;
 }
 
 // Start of trails function
+//When the user gives the state code he needs to be able to pull a list of trails in the given state 
+
+var searchBtn = document.querySelector("#searchBtn");
+searchBtn.addEventListener("click", function () {
+    var selectState = document.querySelector("#selectState");
+    var state = selectState.options[selectState.selectedIndex].value  //because options is an array,selected index is the index of the one we have currently selelcted
+    var apiUrl = "https://developer.nps.gov/api/v1/places?statecode=" + state + "&limit=50&q=trails&api_key=WdgBOclP1YDr6ZIL0vXfInjZRVwmb8VjKrcvwpoZ"
+
+    fetch(apiUrl)
+        .then(function (response) {
+            if (response.ok)
+                response.json().then(function (data) {
+                    trailsData = data;
+                    console.log(data);
+                    // setImage();
+                    var menuList = document.querySelector(".menu");
+                    for (var i = 0; i < data.data.length; i++) {
+                        var item = document.createElement("li");
+                        item.textContent = data.data[i].title
+                        item.dataset.text = data.data[i].bodyText;
+                        item.dataset.image = data.data[i].images[0].url;
+                        item.addEventListener("click", function (event) {
+                            var trailDescription = document.querySelector("#trailDescription");
+                            trailDescription.innerHTML = event.target.dataset.text; //dataset stores extra information  
+                            var koolAidMan = document.getElementById("koolAidMan");
+                            koolAidMan.setAttribute("src", event.target.dataset.image)
+
+                        })
+
+                        
+
+
+                        menuList.appendChild(item);
+                    }
+                });
+        });
+})
+
+
+// $("#user-form").on("submit", getTrailsData);
+// event.preventDefault();
 
 var trailEl = document.querySelector('.menu-list');
 var trailsData;
 
-function getTrailsData() {
 
 
-    var apiUrl = "https://developer.nps.gov/api/v1/places?statecode=WA&limit=50&q=trails&api_key=WdgBOclP1YDr6ZIL0vXfInjZRVwmb8VjKrcvwpoZ"
 
-    fetch(apiUrl)
-        .then(function(response) {
-            if(response.ok)
-            response.json().then(function (data) {
-                trailsData = data;
-                console.log(data);
-                setImage();
-            });
-        });
-};
+
 
 // function showTitle() {
 //     for (var i = 0; i < trailsData.length; i++) {
@@ -89,14 +119,14 @@ function getTrailsData() {
 //     };
 // };
 
-getTrailsData();
+// getTrailsData();
 // showTitle();
 
 
 // Ajane's adding image
 // This is how we access the URL of the image we want
 // trailsData.data[0].images[0].url
-var koolAidMan = document.getElementById("koolAidMan");
-function setImage() {
-    koolAidMan.src = trailsData.data[0].images[0].url;
-}
+// var koolAidMan = document.getElementById("koolAidMan");
+// function setImage() {
+//     koolAidMan.src = trailsData.data[0].images[0].url;
+// }
