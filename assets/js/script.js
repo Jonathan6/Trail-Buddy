@@ -62,7 +62,7 @@ function unixConversion(unix) {
 
 // Start of trails function
 
-var trailEl = document.querySelector('.menu-list');
+var trailEl = document.querySelector('ul');
 var trailsData;
 
 function getTrailsData() {
@@ -75,20 +75,17 @@ function getTrailsData() {
             if(response.ok)
             response.json().then(function (data) {
                 trailsData = data;
-                console.log(data);
+                console.log(trailsData);
             });
         });
 };
 
 function showTitle() {
-    for (var i = 0; i < trailsData.length; i++) {
-        var trails = trailsData.data.title;
-        trailEl
-        console.log(trailsData);
+    for (var i = 0; i < 15; i++) { 
+        var trails = trailsData;
+        trailEl.innerHTML += "<li><a>"+trails+"</a></li>"
     };
 };
 
 getTrailsData();
 showTitle();
-    
-console.log(trailEl);
