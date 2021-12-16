@@ -1,5 +1,19 @@
 # Trail Buddy
 
+## Description
+Trail buddy is a website that allows the user to search for trails in their city, and also gives them information on a trail that they choose.
+
+
+## JavaScript
+
+
+## Hurdles and Pitfalls
+
+
+## Conclusion
+
+
+
 ## Sources
 
 Few Clouds image
