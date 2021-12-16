@@ -15,14 +15,15 @@ function getTrails(){
     
 }
 // Input: Need Latitude, Longitude, API key (https://openweathermap.org/api/one-call-api)
-function getWeatherData(input) {
+function getWeatherData(latitude, longitude) {
     // TODO: get actual OPEN WEATHER API url and key
-    var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=47.466605&lon=-121.655338&exclude=current,minutely,hourly&appid=31ed1d78ece05a26dbb0c6020e7b32b5&units=imperial";
+    var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latitude +"&lon=" + longitude +"&exclude=current,minutely,hourly&appid=31ed1d78ece05a26dbb0c6020e7b32b5&units=imperial";
     fetch(apiUrl)
         .then(function (response) {
             if (response.ok) {
                 response.json().then(function (data) {
                     weatherData = data;
+                    renderWeather();
                 });
             } else {
                 alert("Error: " + response.statusText);
@@ -37,7 +38,7 @@ function renderWeather() {
     for (var i = 0; i < dateEl.length; i++) {
         var current = weatherData.daily[i];
 
-        imgEl[i].src = "assets/images/" + current.weather[0].main + ".jpg"
+        imgEl[i].src = "assets/images/" + current.weather[0].description + ".jpg"
 
         dateEl[i].textContent = unixConversion(current.dt);
         dayEl[i].textContent = current.temp.day + "\u00B0F";
@@ -92,10 +93,13 @@ function displayTrails(){
                     // var menuList = document.querySelector(".menu");
                     for (var i = 0; i < data.data.length; i++) {
                         var item = document.createElement("li");
+                        item.dataset.latitude = data.data[i].latitude;
+                        item.dataset.longitude = data.data[i].longitude;
                         item.textContent = data.data[i].title;
                         item.dataset.text = data.data[i].bodyText;
                         item.dataset.image = data.data[i].images[0].url;
                         item.addEventListener("click", function (event) {
+                            getWeatherData(event.target.dataset.latitude, event.target.dataset.longitude); 
                             var trailDescription = document.querySelector("#trailDescription");
                             trailDescription.innerHTML = event.target.dataset.text; //dataset stores extra information  
                             var koolAidMan = document.getElementById("koolAidMan");
@@ -149,3 +153,4 @@ var trailsData;
 // function setImage() {
 //     koolAidMan.src = trailsData.data[0].images[0].url;
 // }
+
