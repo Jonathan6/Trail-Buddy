@@ -76,7 +76,11 @@ var menuList = document.querySelector(".menu");
 function displayTrails(){
     var selectState = document.querySelector("#selectState");
     var state = selectState.options[selectState.selectedIndex].value  //because options is an array,selected index is the index of the one we have currently selelcted
-    var apiUrl = "https://developer.nps.gov/api/v1/places?statecode=" + state + "&limit=300&q=trails&api_key=WdgBOclP1YDr6ZIL0vXfInjZRVwmb8VjKrcvwpoZ"
+
+   
+    var apiUrl = "https://developer.nps.gov/api/v1/places?statecode=" + state + "&limit=10&q=trails&api_key=WdgBOclP1YDr6ZIL0vXfInjZRVwmb8VjKrcvwpoZ"
+
+
     fetch(apiUrl)
     .then(function (response) {
         if (response.ok)
@@ -116,8 +120,7 @@ function updateUI() {
 
 
 
-// $("#user-form").on("submit", getTrailsData);
-// event.preventDefault();
+
 
 // var trailEl = document.querySelector('ul');
 var trailsData;
