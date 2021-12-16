@@ -9,6 +9,11 @@ var windEl = document.getElementsByClassName("Wind");
 var weatherMainEl = document.getElementsByClassName("WeatherMain");
 var weatherDesEl = document.getElementsByClassName("WeatherDes");
 
+//When the search button is clicked the functions will start.. Add location to the API to give weather of state
+function getTrails(){
+    displayTrails();
+    
+}
 // Input: Need Latitude, Longitude, API key (https://openweathermap.org/api/one-call-api)
 function getWeatherData(input) {
     // TODO: get actual OPEN WEATHER API url and key
@@ -63,46 +68,61 @@ function unixConversion(unix) {
 // Start of trails function
 //When the user gives the state code he needs to be able to pull a list of trails in the given state 
 
+
 var searchBtn = document.querySelector("#searchBtn");
-searchBtn.addEventListener("click", function () {
+searchBtn.addEventListener("click", getTrails);
+var menuList = document.querySelector(".menu");
+
+function displayTrails(){
     var selectState = document.querySelector("#selectState");
     var state = selectState.options[selectState.selectedIndex].value  //because options is an array,selected index is the index of the one we have currently selelcted
+
+   
     var apiUrl = "https://developer.nps.gov/api/v1/places?statecode=" + state + "&limit=10&q=trails&api_key=WdgBOclP1YDr6ZIL0vXfInjZRVwmb8VjKrcvwpoZ"
 
+
     fetch(apiUrl)
-        .then(function (response) {
-            if (response.ok)
-                response.json().then(function (data) {
-                    trailsData = data;
-                    console.log(data);
-                    // setImage();
-                    var menuList = document.querySelector(".menu");
+    .then(function (response) {
+        if (response.ok)
+        response.json().then(function (data) {
+            trailsData = data;
+            console.log(data);
+            updateUI();
+            // setImage();
+                    // var menuList = document.querySelector(".menu");
                     for (var i = 0; i < data.data.length; i++) {
                         var item = document.createElement("li");
-                        item.textContent = data.data[i].title
+                        item.textContent = data.data[i].title;
                         item.dataset.text = data.data[i].bodyText;
                         item.dataset.image = data.data[i].images[0].url;
                         item.addEventListener("click", function (event) {
                             var trailDescription = document.querySelector("#trailDescription");
                             trailDescription.innerHTML = event.target.dataset.text; //dataset stores extra information  
                             var koolAidMan = document.getElementById("koolAidMan");
-                            koolAidMan.setAttribute("src", event.target.dataset.image)
-
+                            koolAidMan.setAttribute("src", event.target.dataset.image);
                         })
-
                         
-
-
+                        
+                        
+                        
+                        
+                        
                         menuList.appendChild(item);
-                    }
-                });
-        });
-})
+                }
+            });
+    });
+}
+
+function updateUI() {
+    console.log("Sup")
+    menuList.replaceChildren();
+}
 
 
 
 
-var trailEl = document.querySelector('.menu-list');
+
+// var trailEl = document.querySelector('ul');
 var trailsData;
 
 
