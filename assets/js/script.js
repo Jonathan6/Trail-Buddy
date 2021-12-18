@@ -1,6 +1,8 @@
 var weatherData;
 var trailsData;
 
+var selectState = document.querySelector("#selectState");
+
 var imgEl = document.querySelectorAll("img");
 var dateEl = document.getElementsByClassName("Date");
 var dayEl = document.getElementsByClassName("Day");
@@ -13,7 +15,11 @@ var menuList = document.querySelector(".menu");
 var searchBtn = document.querySelector("#searchBtn");
 var hiddenObj = document.querySelectorAll(".hidden");
 
-searchBtn.addEventListener("click", displayTrails);
+searchBtn.addEventListener("click", function() {
+    if (selectState.value !== 'Select dropdown') {
+        displayTrails();
+    }
+});
 
 function getWeatherData(latitude, longitude) {
 
@@ -58,10 +64,8 @@ function unixConversion(unix) {
     return temp;
 }
 
-
 function displayTrails(){
-    var selectState = document.querySelector("#selectState");
-    var state = selectState.options[selectState.selectedIndex].value  //because options is an array,selected index is the index of the one we have currently selelcted
+    var state = selectState.value  //because options is an array,selected index is the index of the one we have currently selelcted
     
     var apiUrl = "https://developer.nps.gov/api/v1/places?statecode=" + state + "&limit=10&q=trails&api_key=WdgBOclP1YDr6ZIL0vXfInjZRVwmb8VjKrcvwpoZ";
     
@@ -99,6 +103,7 @@ function displayTrails(){
 function updateUI() {
     menuList.replaceChildren();
 }
+
 function unHide() {
     for (var i = hiddenObj.length-1; i >= 0; i--) {
         hiddenObj[i].classList.remove("hidden");
