@@ -21,15 +21,14 @@
         </p>
       </div>
     </section>
-
     <!-- Content -->
-    
-    <div class="tile">
-      <div class="tile is-vertical">
+    <div class="tile is-ancestor">
+      <div class="tile is-vertical is-4">
         <div class="tile is-parent">
-          <div class="tile is-child box">
-            <div id ="search-box" class = "select">
-              <select id ="selectState" name = "states" >
+          <!-- Search Box -->
+          <div class="tile is-child notification has-text-centered">
+            <div id="search-box" class="select">
+              <select id ="selectState" name = "states">
               <option>Select dropdown</option>
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
@@ -82,10 +81,9 @@
               <option value="WV">West Virginia</option>
               <option value="WI">Wisconsin</option>
               <option value="WY">Wyoming</option>
-              
               </select>
             </div>
-            <button id ="searchBtn" class = "button">Search</button>
+            <a id="searchBtn" class="button" type="submit">Search</a>
           </div>
         </div>
         <div class="tile is-parent">
@@ -102,174 +100,171 @@
           </div>
         </div>
       </div>
-      <div class="tile">
-        <div class="tile is-vertical">
-          <div class="tile is-parent is-8">
-            <!-- Weather of Selected Trail -->
-            <div class="tile is-child notification is-link hidden">
-              <div class="columns">
-                <div class="column">
-                  
-                  <!-- Day 1 -->
-                  <div class="card">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                      </figure>
+      <div class="tile is-vertical">
+        <div class="tile is-parent">
+          <!-- Weather of Selected Trail -->
+          <div class="tile is-child notification is-link hidden">
+            <div class="columns">
+              <div class="column">
+                
+                <!-- Day 1 -->
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <p class="title is-4"><span class="Date">Date</span></p>
+                        <p class="subtitle is-6">
+                          <span class="Day">Day</span><br>
+                          <span class="Max">Max</span><br>
+                          <span class="Min">Min</span>
+                        </p>
+                      </div>
                     </div>
-                    <div class="card-content">
-                      <div class="media">
-                        <div class="media-content">
-                          <p class="title is-4"><span class="Date">Date</span></p>
-                          <p class="subtitle is-6">
-                            <span class="Day">Day</span><br>
-                            <span class="Max">Max</span><br>
-                            <span class="Min">Min</span>
-                          </p>
-                        </div>
-                      </div>
-                      <div class="content">
-                        <span class="Wind">wind</span><br>
-                        <span class="WeatherMain">("snow")</span><br>
-                        <span class="WeatherDes">("rain and snow")</span>
-                        <br>
-                      </div>
+                    <div class="content">
+                      <span class="Wind">wind</span><br>
+                      <span class="WeatherMain">("snow")</span><br>
+                      <span class="WeatherDes">("rain and snow")</span>
+                      <br>
                     </div>
                   </div>
                 </div>
-                <div class="column">
+              </div>
+              <div class="column">
 
-                  <!-- Day 2 -->
-                  <div class="card">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                      </figure>
+                <!-- Day 2 -->
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <p class="title is-4"><span class="Date">Date</span></p>
+                        <p class="subtitle is-6">
+                          <span class="Day">Day</span><br>
+                          <span class="Max">Max</span><br>
+                          <span class="Min">Min</span>
+                        </p>
+                      </div>
                     </div>
-                    <div class="card-content">
-                      <div class="media">
-                        <div class="media-content">
-                          <p class="title is-4"><span class="Date">Date</span></p>
-                          <p class="subtitle is-6">
-                            <span class="Day">Day</span><br>
-                            <span class="Max">Max</span><br>
-                            <span class="Min">Min</span>
-                          </p>
-                        </div>
-                      </div>
-                      <div class="content">
-                        <span class="Wind">wind</span><br>
-                        <span class="WeatherMain">("snow")</span><br>
-                        <span class="WeatherDes">("rain and snow")</span>
-                        <br>
-                      </div>
+                    <div class="content">
+                      <span class="Wind">wind</span><br>
+                      <span class="WeatherMain">("snow")</span><br>
+                      <span class="WeatherDes">("rain and snow")</span>
+                      <br>
                     </div>
                   </div>
                 </div>
-                <div class="column">
+              </div>
+              <div class="column">
 
-                  <!-- Day 3 -->
-                  <div class="card">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                      </figure>
+                <!-- Day 3 -->
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <p class="title is-4"><span class="Date">Date</span></p>
+                        <p class="subtitle is-6">
+                          <span class="Day">Day</span><br>
+                          <span class="Max">Max</span><br>
+                          <span class="Min">Min</span>
+                        </p>
+                      </div>
                     </div>
-                    <div class="card-content">
-                      <div class="media">
-                        <div class="media-content">
-                          <p class="title is-4"><span class="Date">Date</span></p>
-                          <p class="subtitle is-6">
-                            <span class="Day">Day</span><br>
-                            <span class="Max">Max</span><br>
-                            <span class="Min">Min</span>
-                          </p>
-                        </div>
-                      </div>
-                      <div class="content">
-                        <span class="Wind">wind</span><br>
-                        <span class="WeatherMain">("snow")</span><br>
-                        <span class="WeatherDes">("rain and snow")</span>
-                        <br>
-                      </div>
+                    <div class="content">
+                      <span class="Wind">wind</span><br>
+                      <span class="WeatherMain">("snow")</span><br>
+                      <span class="WeatherDes">("rain and snow")</span>
+                      <br>
                     </div>
                   </div>
                 </div>
-                <div class="column">
+              </div>
+              <div class="column">
 
-                  <!-- Day 4 -->
-                  <div class="card">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                      </figure>
+                <!-- Day 4 -->
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <p class="title is-4"><span class="Date">Date</span></p>
+                        <p class="subtitle is-6">
+                          <span class="Day">Day</span><br>
+                          <span class="Max">Max</span><br>
+                          <span class="Min">Min</span>
+                        </p>
+                      </div>
                     </div>
-                    <div class="card-content">
-                      <div class="media">
-                        <div class="media-content">
-                          <p class="title is-4"><span class="Date">Date</span></p>
-                          <p class="subtitle is-6">
-                            <span class="Day">Day</span><br>
-                            <span class="Max">Max</span><br>
-                            <span class="Min">Min</span>
-                          </p>
-                        </div>
-                      </div>
-                      <div class="content">
-                        <span class="Wind">wind</span><br>
-                        <span class="WeatherMain">("snow")</span><br>
-                        <span class="WeatherDes">("rain and snow")</span>
-                        <br>
-                      </div>
+                    <div class="content">
+                      <span class="Wind">wind</span><br>
+                      <span class="WeatherMain">("snow")</span><br>
+                      <span class="WeatherDes">("rain and snow")</span>
+                      <br>
                     </div>
                   </div>
                 </div>
-                <div class="column">
+              </div>
+              <div class="column">
 
-                  <!-- Day 5 -->
-                  <div class="card">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                      </figure>
+                <!-- Day 5 -->
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <p class="title is-4"><span class="Date">Date</span></p>
+                        <p class="subtitle is-6">
+                          <span class="Day">Day</span><br>
+                          <span class="Max">Max</span><br>
+                          <span class="Min">Min</span>
+                        </p>
+                      </div>
                     </div>
-                    <div class="card-content">
-                      <div class="media">
-                        <div class="media-content">
-                          <p class="title is-4"><span class="Date">Date</span></p>
-                          <p class="subtitle is-6">
-                            <span class="Day">Day</span><br>
-                            <span class="Max">Max</span><br>
-                            <span class="Min">Min</span>
-                          </p>
-                        </div>
-                      </div>
-                      <div class="content">
-                        <span class="Wind">wind</span><br>
-                        <span class="WeatherMain">("snow")</span><br>
-                        <span class="WeatherDes">("rain and snow")</span>
-                        <br>
-                      </div>
+                    <div class="content">
+                      <span class="Wind">wind</span><br>
+                      <span class="WeatherMain">("snow")</span><br>
+                      <span class="WeatherDes">("rain and snow")</span>
+                      <br>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="tile is-parent hidden">
+        </div>
+        <div class="tile is-parent">
+          <!-- Information about the current trail -->
+          <div class="tile is-child notification is-info hidden">
 
-            <!-- Information about the current trail -->
-            <div class="tile is-child notification is-info hidden">
-
-              <figure class="image is-128x128">
-                <img src="https://bulma.io/images/placeholders/128x128.png" id="koolAidMan">
-              </figure>
-              <div id = "trailDescription">
-              Primar lorem ipsum dolor sit amet, consectetur
-              adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur.
-              </div>
-
+            <figure class="image is-128x128">
+              <img src="https://bulma.io/images/placeholders/128x128.png" id="koolAidMan">
+            </figure>
+            <div id = "trailDescription">
+            Primar lorem ipsum dolor sit amet, consectetur
+            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur.
             </div>
+
           </div>
         </div>
       </div>
