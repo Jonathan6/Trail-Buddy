@@ -113,7 +113,7 @@ function unHide() {
 // Adds scroll efect for background image
 (function(){
 
-    var parallax = document.querySelectorAll("body"),
+    var parallax = document.querySelectorAll("html"),
         speed = 0.7;
   
     window.onscroll = function(){
