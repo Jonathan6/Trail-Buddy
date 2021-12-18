@@ -41,6 +41,9 @@ Photo by <a href="https://unsplash.com/@eugenetriguba?utm_source=unsplash&utm_me
 Snow image
 Photo by <a href="https://unsplash.com/@wyroq?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kacper Szczechla</a> on <a href="https://unsplash.com/s/photos/snow?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
+Snow image V2
+Photo by <a href="https://unsplash.com/@stanleydai?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Stanley Dai</a> on <a href="https://unsplash.com/s/photos/snow?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
 Mist image
 Photo by <a href="https://unsplash.com/@davehoefler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dave Hoefler</a> on <a href="https://unsplash.com/s/photos/mist?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
