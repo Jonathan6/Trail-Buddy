@@ -27,8 +27,9 @@
     </section>
 
     <!-- Content -->
-    <div id ="search-box">
-      <select id ="selectState" name = "states" > 
+    <div id ="search-box" class = "select">
+      <select id ="selectState" name = "states" >
+      <option>Select dropdown</option>
       <option value="AL">Alabama</option>
       <option value="AK">Alaska</option>
       <option value="AZ">Arizona</option>
@@ -82,24 +83,18 @@
       <option value="WY">Wyoming</option>
       
       </select>
-      <button id ="searchBtn">Search</button>
+      <button id ="searchBtn" class = "button">Search</button>
     </div>
     <div class="tile">
       <div class="tile is-3 is-parent">
         <!-- Available Trails List -->
-        <div class="tile is-child box">
+        <div class="tile is-child box hidden">
           <aside class="menu">
             <p class="menu-label">
               Available Trails
             </p>
             <ul class="menu-list">
-              <li><a>Dashboard</a></li>
-              <li><a>Customers</a></li>
-              <li><a>Dashboard</a></li>
-              <li><a>Dashboard</a></li>
-              <li><a>Dashboard</a></li>
-              <li><a>Dashboard</a></li>
-              <li><a>Dashboard</a></li>
+              
             </ul>
           </aside>
         </div>
@@ -108,7 +103,10 @@
         <div class="tile is-vertical">
           <div class="tile is-parent">
             <!-- Weather of Selected Trail -->
-            <div class="tile is-child notification is-link cardSurround">
+
+            <div class="tile is-child notification is-link cardSurround hidden">
+
+
               <div class="columns">
                 <div class="column">
                   
@@ -258,10 +256,10 @@
               </div>
             </div>
           </div>
-          <div class="tile is-parent">
+          <div class="tile is-parent hidden">
 
             <!-- Information about the current trail -->
-            <div class="tile is-child notification is-info">
+            <div class="tile is-child notification is-info hidden">
 
               <figure class="image is-128x128">
                 <img src="https://bulma.io/images/placeholders/128x128.png" id="koolAidMan">

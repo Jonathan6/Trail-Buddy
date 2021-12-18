@@ -11,6 +11,7 @@ li:hover {
 
 }
 
+
 .hero {
     font-family: 'Dancing Script', cursive;
     background-image: url("/assets/images/sticks.jpg");
@@ -71,4 +72,8 @@ li:hover {
     color: black;
     text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 2px 0 #fff, -1px 0 0 #fff;
     font-weight: bolder;
+
+.hidden {
+    display:none;
+
 }
