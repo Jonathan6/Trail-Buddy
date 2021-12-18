@@ -43,7 +43,7 @@ li:hover {
 }
 
 .tile .is-child {
-    background-image: url("/assets/images/sticks.jpg");
+    background-image: url("https://images.unsplash.com/photo-1506968430777-bf7784a87f23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80");
     background-repeat: repeat;
     background-size: cover;
 }
