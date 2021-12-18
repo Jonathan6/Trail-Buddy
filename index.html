@@ -26,14 +26,10 @@
       </div>
     </section>
     <!-- Content -->
-    <div class="tile is-ancestor">
-      <div class="tile is-vertical is-4">
-        <div class="tile is-parent">
           <!-- Search Box -->
-          <div class="tile is-child notification has-text-centered">
             <div id="search-box" class="select">
               <select id ="selectState" name = "states">
-              <option>Select dropdown</option>
+              <option id="selectDefault">Choose a State!</option>
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
               <option value="AZ">Arizona</option>
@@ -86,24 +82,22 @@
               <option value="WI">Wisconsin</option>
               <option value="WY">Wyoming</option>
               </select>
+              <button id="searchBtn" class="button" type="submit">Search</button>
             </div>
-            <a id="searchBtn" class="button" type="submit">Search</a>
-          </div>
-        </div>
-        <div class="tile is-parent">
+        <div class="tile">
+        <div class="tile is-3 is-parent">
           <!-- Available Trails List -->
           <div class="tile is-child box hidden">
-            <div class="menu">
+            <aside class="menu">
               <p class="menu-label">
                 Available Trails
               </p>
               <ul class="menu-list">
                 
               </ul>
-            </div>
+            </aside>
           </div>
         </div>
-      </div>
       <div class="tile is-vertical">
         <div class="tile is-parent">
           <!-- Weather of Selected Trail -->

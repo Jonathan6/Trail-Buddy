@@ -15,8 +15,10 @@ var menuList = document.querySelector(".menu");
 var searchBtn = document.querySelector("#searchBtn");
 var hiddenObj = document.querySelectorAll(".hidden");
 
+var defaultEl = document.getElementById("selectDefault");
+
 searchBtn.addEventListener("click", function() {
-    if (selectState.value !== 'Select dropdown') {
+    if (selectState.value !== defaultEl.textContent) {
         displayTrails();
     }
 });
@@ -113,7 +115,7 @@ function unHide() {
 // Adds scroll efect for background image
 (function(){
 
-    var parallax = document.querySelectorAll("body"),
+    var parallax = document.querySelectorAll("html"),
         speed = 0.7;
   
     window.onscroll = function(){
