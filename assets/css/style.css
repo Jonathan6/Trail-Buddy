@@ -1,6 +1,6 @@
 
 body {
-    background-image: url("/assets/images/background.jpg");
+    background-image: url("/assets/images/leaves.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -10,6 +10,70 @@ li:hover {
     cursor: pointer;
 
 }
+
+
+.hero {
+    font-family: 'Dancing Script', cursive;
+    background-image: url("/assets/images/sticks.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.title {
+    color: #fff;
+    text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+    font-size: 50px;
+}
+
+.subtitle {
+    color: #fff;
+    text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+    font-weight: bold;
+}
+
+.Date, .Day, .Max, .Min {
+    color: #000;
+    text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 2px 0 #fff, -1px 0 0 #fff;
+}
+
+.card {
+    background-color: #E9E0D8;
+}
+
+.tile .is-child {
+    background-image: url("/assets/images/sticks.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.menu-label{
+    color: #fff;
+    text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+    font-weight: bolder;
+    font-size: 20px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.menu-list a {
+    color: #fff;
+    text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+    font-weight: bolder;
+    font-family: 'Dancing Script', cursive;
+}
+
+.tile, .is-child, .box, li {
+    color: #fff;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 2px 0 #000, -1px 0 0 #000;
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+}
+
+.Wind, .WeatherMain, .WeatherDes {
+    color: black;
+    text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 2px 0 #fff, -1px 0 0 #fff;
+    font-weight: bolder;
+
 .hidden {
     display:none;
+
 }

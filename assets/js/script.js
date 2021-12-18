@@ -99,8 +99,10 @@ function displayTrails(){
 function updateUI() {
     menuList.replaceChildren();
 }
+
 function unHide() {
     for (var i = hiddenObj.length-1; i >= 0; i--) {
         hiddenObj[i].classList.remove("hidden");
     }
 }
+

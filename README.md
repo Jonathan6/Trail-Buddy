@@ -46,5 +46,10 @@ Photo by <a href="https://unsplash.com/@davehoefler?utm_source=unsplash&utm_medi
 
 Rain and Snow image
 Photo by <a href="https://unsplash.com/@osmanrana?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Osman Rana</a> on <a href="https://unsplash.com/s/photos/rain-and-snow?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Leaf image 
+Photo by <a href="https://unsplash.com/@nahilnaseer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nahil Naseer</a> on <a href="https://unsplash.com/s/photos/pattern?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
+Sticks image
+Photo by <a href="https://unsplash.com/@thejmoore?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jon Moore</a> on <a href="https://unsplash.com/s/photos/wood-planks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
