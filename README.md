@@ -1,5 +1,19 @@
 # Trail Buddy
 
+## Description
+Trail buddy is a website that allows the user to search for trails in their city, and also gives them information on a trail that they choose.
+
+
+## JavaScript
+
+
+## Hurdles and Pitfalls
+
+
+## Conclusion
+
+
+
 ## Sources
 
 Few Clouds image
@@ -29,4 +43,8 @@ Photo by <a href="https://unsplash.com/@wyroq?utm_source=unsplash&utm_medium=ref
 
 Mist image
 Photo by <a href="https://unsplash.com/@davehoefler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dave Hoefler</a> on <a href="https://unsplash.com/s/photos/mist?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Rain and Snow image
+Photo by <a href="https://unsplash.com/@osmanrana?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Osman Rana</a> on <a href="https://unsplash.com/s/photos/rain-and-snow?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
   

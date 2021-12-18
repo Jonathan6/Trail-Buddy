@@ -3,9 +3,13 @@ body {
     background-image: url("/assets/images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+}
 
 li:hover {
     color: aqua;
     cursor: pointer;
 
+}
+.hidden {
+    display:none;
 }
