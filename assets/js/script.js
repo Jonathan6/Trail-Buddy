@@ -132,8 +132,6 @@ var trailsData;
 
 
 
-
-
 // function showTitle() {
 //     for (var i = 0; i < trailsData.length; i++) {
 //         var trails = trailsData.data.title;
