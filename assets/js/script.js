@@ -15,8 +15,10 @@ var menuList = document.querySelector(".menu");
 var searchBtn = document.querySelector("#searchBtn");
 var hiddenObj = document.querySelectorAll(".hidden");
 
+var defaultEl = document.getElementById("selectDefault");
+
 searchBtn.addEventListener("click", function() {
-    if (selectState.value !== 'Select dropdown') {
+    if (selectState.value !== defaultEl.textContent) {
         displayTrails();
     }
 });
