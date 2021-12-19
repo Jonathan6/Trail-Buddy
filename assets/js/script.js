@@ -1,3 +1,6 @@
+$("#trailListBox").hide();
+$("#trailDescriptionBoxes").hide();
+
 var weatherData;
 var trailsData;
 
@@ -20,6 +23,7 @@ var defaultEl = document.getElementById("selectDefault");
 searchBtn.addEventListener("click", function () {
     if (selectState.value !== defaultEl.textContent) {
         displayTrails();
+        $("#trailListBox").show();
     }
 });
 
@@ -71,8 +75,6 @@ function displayTrails() {
 
     var apiUrl = "https://developer.nps.gov/api/v1/places?statecode=" + state + "&limit=10&q=trails&api_key=WdgBOclP1YDr6ZIL0vXfInjZRVwmb8VjKrcvwpoZ";
 
-    unHide();
-
     fetch(apiUrl)
         .then(function (response) {
             if (response.ok) {
@@ -90,6 +92,7 @@ function displayTrails() {
                             item.dataset.text = data.data[i].bodyText;
                             item.dataset.image = data.data[i].images[0].url;
                             item.addEventListener("click", function setDescription(event) {
+                                $("#trailDescriptionBoxes").show();
                                 getWeatherData(event.target.dataset.latitude, event.target.dataset.longitude);
                                 var trailDescription = document.querySelector("#trailDescription");
                                 trailDescription.innerHTML = event.target.dataset.text; //dataset stores extra information  
@@ -97,11 +100,8 @@ function displayTrails() {
                                 koolAidMan.setAttribute("src", event.target.dataset.image);
 
                             });
-
                             menuList.appendChild(item);
-
                         }
-
                     }
                 });
             }
@@ -112,13 +112,8 @@ function updateUI() {
     menuList.replaceChildren();
 }
 
-function unHide() {
-    for (var i = hiddenObj.length - 1; i >= 0; i--) {
-        hiddenObj[i].classList.remove("hidden");
-    }
-}
 
-// Adds scroll efect for background image
+// Adds scroll effect for background image
 (function () {
 
     var parallax = document.querySelectorAll("html"),

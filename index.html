@@ -87,7 +87,7 @@
         <div class="tile">
         <div class="tile is-3 is-parent">
           <!-- Available Trails List -->
-          <div class="tile is-child box hidden">
+          <div class="tile is-child box" id ="trailListBox">
             <aside class="menu">
               <p class="menu-label">
                 Available Trails
@@ -98,10 +98,10 @@
             </aside>
           </div>
         </div>
-      <div class="tile is-vertical">
-        <div class="tile is-parent">
+      <div class="tile is-vertical" id = "trailDescriptionBoxes">
+        <div class="tile is-parent" >
           <!-- Weather of Selected Trail -->
-          <div class="tile is-child notification is-link hidden">
+          <div class="tile is-child notification is-link ">
             <div class="columns">
               <div class="column">
                 
@@ -251,7 +251,7 @@
         </div>
         <div class="tile is-parent">
           <!-- Information about the current trail -->
-          <div class="tile is-child notification is-info hidden image-description">
+          <div class="tile is-child notification is-info image-description">
 
             <img src="https://bulma.io/images/placeholders/128x128.png" id="koolAidMan">
            
@@ -264,6 +264,7 @@
         </div>
       </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>
