@@ -13,6 +13,12 @@ Trail buddy is a website that allows the user to search for trails in their city
 * Sources
 
 ## Trail Buddy Website Preview
+<details>
+<summary>Click to Reveal</summary>
+[![Screenshot of Trail Buddy Website](/assets/images/screenshot.png)](https://jonathan6.github.io/Trail-Buddy/)
+Click the preview to be redirected to the website!
+
+</details>
 
 ## Overview
 In this project we tried to execute a design integrating data received from two server-side API requests. We have used the National Park Service (NPS) API and Open Weather API to build this website. One of the major requirement of this project was to use a CSS framework other than Bootstrap. We have used Bulma as a framework API. 
@@ -26,11 +32,15 @@ Unlike the other homework assignments Project 1 gave us a chance to work collabo
 
 
 ## Conclusion
-
+This project was a great experience to revisit all the topics we have learned so far. It helped us learn how to work collaboratively in a group and to practice the proper git workflow. We got comfortable working with server side APIs and effectively use the debugger tool to fix the errors that we found along the way. 
 
 
 
 ## Sources
+
+<details>
+<summary>Click to Reveal</summary>
+
 
 Few Clouds image
 Photo by <a href="https://unsplash.com/@ritambaishya?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ritam Baishya</a> on <a href="https://unsplash.com/s/photos/clear-sky?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -71,4 +81,4 @@ Photo by <a href="https://unsplash.com/@nahilnaseer?utm_source=unsplash&utm_medi
   
 Sticks image
 Photo by <a href="https://unsplash.com/@thejmoore?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jon Moore</a> on <a href="https://unsplash.com/s/photos/wood-planks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
+</details>  
