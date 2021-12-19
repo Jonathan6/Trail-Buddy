@@ -1,6 +1,7 @@
 
-body {
-    background-image: url("/assets/images/leaves.jpg");
+
+html {
+    background-image: url("https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2127&q=80");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -14,9 +15,10 @@ li:hover {
 
 .hero {
     font-family: 'Dancing Script', cursive;
-    background-image: url("/assets/images/sticks.jpg");
+    background-image: url("https://images.unsplash.com/photo-1506968430777-bf7784a87f23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80");
     background-repeat: repeat;
     background-size: cover;
+    filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 1.5));
 }
 
 .title {
@@ -41,9 +43,10 @@ li:hover {
 }
 
 .tile .is-child {
-    background-image: url("/assets/images/sticks.jpg");
+    background-image: url("https://images.unsplash.com/photo-1506968430777-bf7784a87f23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80");
     background-repeat: repeat;
     background-size: cover;
+    filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 1.5));
 }
 
 .menu-label{
@@ -72,8 +75,22 @@ li:hover {
     color: black;
     text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 2px 0 #fff, -1px 0 0 #fff;
     font-weight: bolder;
+}
 
 .hidden {
-    display:none;
+    display: none;
+}
 
+#search-box {
+    display: flex;
+}
+
+#selectState {
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
+
+#searchBtn {
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
 }
