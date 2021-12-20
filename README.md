@@ -1,16 +1,32 @@
 # Trail Buddy
 
 ## Description
-Trail buddy is a website that allows the user to search for trails in their city, and also gives them information on a trail that they choose.
+Trail buddy is a website that allows the user to search for trails in their city, and also gives them information on a trail that they choose. This website also pulls from the Open Weather API to show the weather forcast for next 5 days for a selected trail. 
 
+## Table of Contents
+* Description
+* Trail Buddy Website Preview
+* Overview 
+* Bulma 
+* Hurdles and Pitfalls 
+* Conclusion
+* Sources
 
-## JavaScript
+## Trail Buddy Website Preview
+
+## Overview
+In this project we tried to execute a design integrating data received from two server-side API requests. We have used the National Park Service (NPS) API and Open Weather API to build this website. One of the major requirement of this project was to use a CSS framework other than Bootstrap. We have used Bulma as a framework API. 
+
+## Bulma 
+Bulma is an open source framework that provides ready-to-use frontend components that can be combined to build responsive websites. It uses the Flexbox layout and is really user friendly with extensive documentation on their site. 
 
 
 ## Hurdles and Pitfalls
+Unlike the other homework assignments Project 1 gave us a chance to work collaboratively. Working in a group was fun. We divided the tasks among ourselves and used the GitHub projects for this. We practiced the Git workflow through out the project to make sure we won't end up in merge conflicts. 
 
 
 ## Conclusion
+
 
 
 
@@ -40,6 +56,9 @@ Photo by <a href="https://unsplash.com/@eugenetriguba?utm_source=unsplash&utm_me
 
 Snow image
 Photo by <a href="https://unsplash.com/@wyroq?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kacper Szczechla</a> on <a href="https://unsplash.com/s/photos/snow?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Snow image V2
+Photo by <a href="https://unsplash.com/@stanleydai?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Stanley Dai</a> on <a href="https://unsplash.com/s/photos/snow?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 Mist image
 Photo by <a href="https://unsplash.com/@davehoefler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dave Hoefler</a> on <a href="https://unsplash.com/s/photos/mist?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
