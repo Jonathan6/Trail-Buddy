@@ -1,5 +1,8 @@
 var weatherData;
 var trailsData;
+var favoriteData = {
+
+};
 
 var selectState = document.querySelector("#selectState");
 
@@ -15,11 +18,15 @@ var menuList = document.querySelector(".menu");
 var searchBtn = document.querySelector("#searchBtn");
 var hiddenObj = document.querySelectorAll(".hidden");
 
+var saveBtnEl = document.getElementById("trailSaver");
+var favoriteBoxEl =document.getElementById("selectFavorite");
+
 var defaultEl = document.getElementById("selectDefault");
 
 searchBtn.addEventListener("click", function() {
     if (selectState.value !== defaultEl.textContent) {
         displayTrails();
+        loadFavoriteData();
     }
 });
 
@@ -82,6 +89,12 @@ function displayTrails(){
                 updateUI();
                 for (var i = 0; i < data.data.length; i++) {
                     var item = document.createElement("li");
+                    saveBtnEl.dataset.latitude = data.data[i].latitude;
+                    saveBtnEl.dataset.longitude = data.data[i].longitude;
+                    saveBtnEl.dataset.title = data.data[i].title;
+                    saveBtnEl.dataset.text = data.data[i].bodyText;
+                    saveBtnEl.dataset.image = data.data[i].images[0].url;
+
                     item.dataset.latitude = data.data[i].latitude;
                     item.dataset.longitude = data.data[i].longitude;
                     item.textContent = data.data[i].title;
@@ -112,7 +125,7 @@ function unHide() {
     }
 }
 
-// Adds scroll efect for background image
+// Adds scroll effect for background image
 (function(){
 
     var parallax = document.querySelectorAll("html"),
@@ -129,4 +142,36 @@ function unHide() {
       });
     };
   
-  })();
+})();
+
+saveBtnEl.addEventListener("click", function() {
+    var title = saveBtnEl.dataset.title;
+    console.log(title);
+    // if (Object.keys(favoriteData).length == 0 || !(title in favoriteData)) {
+        favoriteData[title] = { 
+            longitude: saveBtnEl.dataset.longitude,
+            latitude: saveBtnEl.dataset.latitude,
+            text: saveBtnEl.dataset.bodyText,
+            image: saveBtnEl.dataset.image
+        };
+    // } else {
+        // delete favoriteData.title; 
+    // }
+    saveFavoriteData();
+    renderFavorite();
+});
+
+function renderFavorite() {
+    favoriteBoxEl.innerHTML = "";
+    for (var [key] of Object.entries(favoriteData)) {
+        favoriteBoxEl.insertAdjacentHTML("beforeend", `<option>${key}</option>`);
+    }
+}
+
+function saveFavoriteData() {
+    localStorage.setItem("favoriteData", JSON.stringify(favoriteData));
+}
+
+function loadFavoriteData() {
+    favoriteData = JSON.parse(localStorage.getItem("favoriteData"));
+}
