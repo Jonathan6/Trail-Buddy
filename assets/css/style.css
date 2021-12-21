@@ -94,3 +94,22 @@ li:hover {
     font-family: 'Merriweather', serif;
     font-weight: bold;
 }
+
+#favorite-box {
+    display: flex;
+}
+
+#selectFavorite {
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
+
+#favoriteButton {
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
+
+#trailSaver {
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
