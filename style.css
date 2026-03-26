@@ -1,0 +1,487 @@
+/* =============================================
+   TRAIL BUDDY — Custom Stylesheet
+   Palette:
+     --green-light  : #e8f5e9  (background wash)
+     --green-mid    : #c8e6c9  (card backgrounds)
+     --green-deep   : #4a7c59  (text, borders)
+     --accent       : #f4854b  (buttons, highlights)
+     --white        : #ffffff
+     --text         : #2c3a2e
+     --text-muted   : #6b8f71
+============================================= */
+
+:root {
+  --green-light: #e8f5e9;
+  --green-mid: #c8e6c9;
+  --green-deep: #4a7c59;
+  --accent: #f4854b;
+  --accent-dark: #d96930;
+  --white: #ffffff;
+  --text: #2c3a2e;
+  --text-muted: #6b8f71;
+  --border: #b2d4b8;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 2px 12px rgba(74, 124, 89, 0.1);
+  --shadow-md: 0 4px 24px rgba(74, 124, 89, 0.15);
+  --font-body: "DM Sans", sans-serif;
+  --font-display: "Playfair Display", serif;
+}
+
+/* ── Reset ───────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  font-size: 16px;
+  background-color: var(--green-light);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      ellipse at 10% 0%,
+      rgba(200, 230, 201, 0.55) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 90% 100%,
+      rgba(200, 230, 201, 0.4) 0%,
+      transparent 55%
+    ),
+    var(--green-light);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+ul {
+  list-style: none;
+}
+
+/* ── Header ──────────────────────────────── */
+.site-header {
+  background: var(--green-deep);
+  padding: 0;
+}
+
+.header-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 28px 40px 24px;
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--white);
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+
+/* ── Controls Section ────────────────────── */
+.controls-section {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.controls-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 24px 40px;
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.control-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.control-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ── Shared Form Elements ─────────────────── */
+.styled-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--green-light)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234a7c59' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")
+    no-repeat right 14px center;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 40px 10px 14px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  min-width: 200px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.styled-select:focus {
+  outline: none;
+  border-color: var(--green-deep);
+  box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.12);
+}
+
+/* ── Buttons ─────────────────────────────── */
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 10px 22px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition:
+    background 0.2s,
+    transform 0.1s,
+    box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(244, 133, 75, 0.25);
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  box-shadow: 0 4px 14px rgba(244, 133, 75, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(244, 133, 75, 0.2);
+}
+
+.btn-save {
+  margin-top: 20px;
+  padding: 12px 32px;
+  font-size: 0.95rem;
+}
+
+/* ── Main Layout ─────────────────────────── */
+.main-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 36px 40px 60px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* ── Trail List Panel ────────────────────── */
+.trail-list-panel {
+  display: none;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  position: sticky;
+  top: 24px;
+}
+
+.panel-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--white);
+  background: var(--green-deep);
+  padding: 16px 20px;
+  letter-spacing: 0.01em;
+}
+
+.trail-list {
+  max-height: 520px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--green-mid) transparent;
+}
+
+.trail-list::-webkit-scrollbar {
+  width: 5px;
+}
+.trail-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.trail-list::-webkit-scrollbar-thumb {
+  background: var(--green-mid);
+  border-radius: 99px;
+}
+
+.trail-list li {
+  padding: 13px 20px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text);
+  border-bottom: 1px solid var(--green-light);
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    padding-left 0.15s;
+  line-height: 1.4;
+}
+
+.trail-list li:last-child {
+  border-bottom: none;
+}
+
+.trail-list li:hover {
+  background: var(--green-light);
+  color: var(--green-deep);
+  padding-left: 26px;
+}
+
+.trail-list li.active {
+  background: var(--green-mid);
+  color: var(--green-deep);
+  font-weight: 600;
+}
+
+/* ── Trail Detail Panel ──────────────────── */
+.trail-detail {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: -8px;
+}
+
+/* ── Weather Row ─────────────────────────── */
+.weather-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.weather-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.weather-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.weather-img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  background: var(--green-mid);
+}
+
+.weather-info {
+  padding: 12px 14px 14px;
+}
+
+.weather-date {
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--green-deep);
+  margin-bottom: 4px;
+}
+
+.weather-temp {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.weather-range {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.weather-wind {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  margin-bottom: 3px;
+}
+
+.weather-desc {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+  text-transform: capitalize;
+}
+
+.weather-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: capitalize;
+}
+
+/* ── Trail Info Card ─────────────────────── */
+.trail-info-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  overflow: hidden;
+  min-height: 260px;
+}
+
+#koolAidMan {
+  width: 340px;
+  height: 100%;
+  object-fit: cover;
+  background: var(--green-mid);
+  flex-shrink: 0;
+}
+
+.trail-info-body {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.trail-description {
+  font-size: 0.93rem;
+  line-height: 1.75;
+  color: var(--text);
+  flex: 1;
+}
+
+.trail-description p {
+  margin-bottom: 0.75em;
+}
+.trail-description strong {
+  color: var(--green-deep);
+}
+.trail-description a {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+/* ── Empty / hidden states ───────────────── */
+.hidden {
+  display: none !important;
+}
+
+/* ── Responsive ──────────────────────────── */
+@media (max-width: 1100px) {
+  .weather-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .main-content {
+    grid-template-columns: 240px 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    padding: 24px 20px 48px;
+  }
+  .trail-list-panel {
+    position: static;
+  }
+  .trail-info-card {
+    grid-template-columns: 1fr;
+  }
+  #koolAidMan {
+    width: 100%;
+    height: 220px;
+  }
+  .controls-inner {
+    padding: 20px 20px;
+    gap: 24px;
+  }
+  .header-inner {
+    padding: 22px 20px 18px;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .weather-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .control-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .styled-select {
+    min-width: unset;
+    width: 100%;
+  }
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+  .weather-row {
+    grid-template-columns: 1fr;
+  }
+}
