@@ -35,11 +35,11 @@ searchBtn.addEventListener("click", function () {
 // ── Weather ────────────────────────────────
 function getWeatherData(latitude, longitude) {
   const apiUrl =
-    "https://api.openweathermap.org/data/2.5/onecall?lat=" +
+    "https://api.openweathermap.org/data/2.5/forecast?lat=" +
     latitude +
     "&lon=" +
     longitude +
-    "&exclude=current,minutely,hourly&appid=31ed1d78ece05a26dbb0c6020e7b32b5&units=imperial";
+    "&units=imperial&appid=31ed1d78ece05a26dbb0c6020e7b32b5&units=imperial";
 
   fetch(apiUrl)
     .then(function (response) {
@@ -58,18 +58,63 @@ function getWeatherData(latitude, longitude) {
 }
 
 function renderWeather() {
-  for (var i = 0; i < dateEls.length; i++) {
-    const current = weatherData.daily[i];
+  let elIndex = 0; // counter for which dateEl to update
+  let dataIndex = 0; // counter for traversing weatherData
 
-    imgEls[i].src = "assets/images/" + current.weather[0].description + ".jpg";
-    dateEls[i].textContent = unixConversion(current.dt);
-    dayEls[i].textContent = current.temp.day + "\u00B0F";
-    maxEls[i].textContent = "High: " + current.temp.max + "\u00B0F";
-    minEls[i].textContent = "Low: " + current.temp.min + "\u00B0F";
-    windEls[i].textContent = current.wind_speed + " MPH";
-    weatherMainEls[i].textContent = current.weather[0].main;
-    weatherDesEls[i].textContent = current.weather[0].description;
+  // Check if first element is after noon (12:00:00), if so use it
+  if (new Date(weatherData.list[0].dt * 1000).getHours() >= 12) {
+    const current = weatherData.list[0];
+    imgEls[elIndex].src =
+      "assets/images/" + current.weather[0].description + ".jpg";
+    dateEls[elIndex].textContent = unixConversion(current.dt);
+    dayEls[elIndex].textContent = current.main.temp + "\u00B0F";
+    maxEls[elIndex].textContent = "High: " + current.main.temp_max + "\u00B0F";
+    minEls[elIndex].textContent = "Low: " + current.main.temp_min + "\u00B0F";
+    windEls[elIndex].textContent = current.wind.speed + " MPH";
+    weatherMainEls[elIndex].textContent = current.weather[0].main;
+    weatherDesEls[elIndex].textContent = current.weather[0].description;
+    elIndex++;
   }
+
+  // Move to next day's data
+  dataIndex++;
+
+  // Loop until all date elements are filled
+  while (elIndex < dateEls.length) {
+    const current = weatherData.list[dataIndex];
+
+    // Look for the next day's noon (12:00:00 = hour 12)
+    if (current && new Date(current.dt * 1000).getHours() >= 12) {
+      
+      imgEls[elIndex].src =
+        "assets/images/" + current.weather[0].description + ".jpg";
+      dateEls[elIndex].textContent = unixConversion(current.dt);
+      dayEls[elIndex].textContent = current.main.temp + "\u00B0F";
+      maxEls[elIndex].textContent =
+        "High: " + current.main.temp_max + "\u00B0F";
+      minEls[elIndex].textContent = "Low: " + current.main.temp_min + "\u00B0F";
+      windEls[elIndex].textContent = current.wind.speed + " MPH";
+      weatherMainEls[elIndex].textContent = current.weather[0].main;
+      weatherDesEls[elIndex].textContent = current.weather[0].description;
+      elIndex++;
+    }
+    dataIndex++;
+
+    // Safety check to avoid infinite loop if data runs out
+    if (dataIndex >= weatherData.list.length) break;
+  }
+  // for (var i = 0; i < dateEls.length; i++) {
+  //   const current = weatherData.list[i];
+
+  //   imgEls[i].src = "assets/images/" + current.weather[0].description + ".jpg";
+  //   dateEls[i].textContent = unixConversion(current.dt);
+  //   dayEls[i].textContent = current.temp.day + "\u00B0F";
+  //   maxEls[i].textContent = "High: " + current.temp.max + "\u00B0F";
+  //   minEls[i].textContent = "Low: " + current.temp.min + "\u00B0F";
+  //   windEls[i].textContent = current.wind_speed + " MPH";
+  //   weatherMainEls[i].textContent = current.weather[0].main;
+  //   weatherDesEls[i].textContent = current.weather[0].description;
+  // }
 }
 
 function unixConversion(unix) {
