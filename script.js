@@ -103,18 +103,6 @@ function renderWeather() {
     // Safety check to avoid infinite loop if data runs out
     if (dataIndex >= weatherData.list.length) break;
   }
-  // for (var i = 0; i < dateEls.length; i++) {
-  //   const current = weatherData.list[i];
-
-  //   imgEls[i].src = "assets/images/" + current.weather[0].description + ".jpg";
-  //   dateEls[i].textContent = unixConversion(current.dt);
-  //   dayEls[i].textContent = current.temp.day + "\u00B0F";
-  //   maxEls[i].textContent = "High: " + current.temp.max + "\u00B0F";
-  //   minEls[i].textContent = "Low: " + current.temp.min + "\u00B0F";
-  //   windEls[i].textContent = current.wind_speed + " MPH";
-  //   weatherMainEls[i].textContent = current.weather[0].main;
-  //   weatherDesEls[i].textContent = current.weather[0].description;
-  // }
 }
 
 function unixConversion(unix) {
@@ -140,11 +128,13 @@ function displayTrails(state) {
 
         for (var i = 0; i < data.data.length; i++) {
           const trail = data.data[i];
+          console.log(trail)
           if (trail.latitude !== "" || trail.longitude !== "") {
             const item = document.createElement("li");
             item.dataset.latitude = trail.latitude;
             item.dataset.longitude = trail.longitude;
             item.textContent = trail.title;
+            item.dataset.title = trail.title;
             item.dataset.text = trail.bodyText;
             item.dataset.image = trail.images[0].url;
             item.dataset.state = state;
